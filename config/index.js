@@ -1,10 +1,9 @@
-const path = require('path');
 const R = require('ramda');
 
 const { NODE_ENV = 'development' } = process.env;
 
 const config = {
-    connectionUri: `sqlite://${path.resolve(__dirname)}/bible.sqlite`,
+    connectionUri: `sqlite://${process.cwd()}/bible.sqlite`,
     sourceUrl: 'https://raw.githubusercontent.com/thiagobodruk/bible/master/json/en_kjv.json'
 };
 

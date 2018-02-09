@@ -5,7 +5,7 @@ const { connection, Book } = require('./lib/data/sequelize');
 
 const tasks = [
     axios.get(sourceUrl),
-    connection.sync()
+    connection.sync({ force: true })
 ];
 
 Promise
@@ -13,7 +13,9 @@ Promise
     .then(populate);
 
 function populate([response]) {
-    response.data.forEach(book => {
+    const books = JSON.parse(response.data.trim());
+
+    books.forEach(book => {
         Book.create({ name: book.book });
     });
 }

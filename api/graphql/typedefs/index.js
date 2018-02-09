@@ -1,6 +1,7 @@
 module.exports = `
     type Book {
         id: Int!
+        name: String!
         chapters: [Chapter]
     }
     
