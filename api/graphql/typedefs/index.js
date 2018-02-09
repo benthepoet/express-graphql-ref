@@ -1,9 +1,20 @@
 module.exports = `
-    type Mutation {
-        
+    type Book {
+        id: Int!
+        chapters: [Chapter]
+    }
+    
+    type Chapter {
+        id: Int!
+        verses: [Verse]
+    }
+    
+    type Verse {
+        id: Int!
     }
     
     type Query {
-        
+        book(id: Int!): Book
+        books: [Book]
     }
 `;

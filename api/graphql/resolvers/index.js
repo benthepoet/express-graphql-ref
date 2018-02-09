@@ -1,4 +1,8 @@
+const bibleService = require('../../../lib/services/bible');
+
 module.exports = {
-    Mutation: {},
-    Query: {}
+    Query: {
+        book: (_, { id }) => bibleService.getBook(id),
+        books: () => bibleService.getBooks()
+    }
 };
