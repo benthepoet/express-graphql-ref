@@ -1,12 +1,15 @@
-const { graphqlExpress, graphiqlExpress } = require('apollo-server-express');
-const bodyParser = require('body-parser');
-const { Router } = require('express');
+module.exports = ({ graphqlExpress, graphiqlExpress }, bodyParser, { Router }, schema) => {
+    const router = Router();
+    
+    router.use('/graphql', bodyParser.json(), graphqlExpress({ schema }));
+    router.use('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }));
+    
+    return router;
+};
 
-const schema = require('./schema');
-
-const router = Router();
-
-router.use('/graphql', bodyParser.json(), graphqlExpress({ schema }));
-router.use('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }));
-
-module.exports = router;
+module.exports['@require'] = [
+    'apollo-server-express',
+    'body-parser',
+    'express',
+    'api/graphql/schema'
+];

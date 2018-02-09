@@ -1,4 +1,4 @@
-module.exports = `
+module.exports = () => `
     type Book {
         id: Int!
         name: String!
@@ -18,4 +18,4 @@ module.exports = `
         book(id: Int!): Book
         books: [Book]
     }
-`;
+`

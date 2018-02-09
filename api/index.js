@@ -1,12 +1,15 @@
-const cors = require('cors');
-const express = require('express');
+module.exports = (cors, express, graphqlRouter, logger) => {
+    const api = express();
+    
+    api.use(cors());
+    api.use(graphqlRouter);
+    
+    return api;
+}
 
-const graphqlRouter = require('./graphql/router');
-const logger = require('./middleware/logger');
-
-const api = express();
-
-api.use(cors());
-api.use(graphqlRouter);
-
-module.exports = api;
+module.exports['@require'] = [
+    'cors',
+    'express',
+    'api/graphql/router',
+    'api/middleware/logger'
+];
