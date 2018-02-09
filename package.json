@@ -1,0 +1,31 @@
+{
+  "name": "express-graphql-ref",
+  "version": "1.0.0",
+  "description": "A reference GraphQL API built with Express.",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benthepoet/express-graphql-ref.git"
+  },
+  "keywords": [
+    "graphql",
+    "rest",
+    "express"
+  ],
+  "author": "Ben Hanna <benpaulhanna@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/benthepoet/express-graphql-ref/issues"
+  },
+  "homepage": "https://github.com/benthepoet/express-graphql-ref#readme",
+  "dependencies": {
+    "cors": "^2.8.4",
+    "express": "^4.16.2"
+  }
+}
