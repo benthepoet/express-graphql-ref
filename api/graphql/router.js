@@ -2,7 +2,7 @@ const { graphqlExpress, graphiqlExpress } = require('apollo-server-express');
 const bodyParser = require('body-parser');
 const { Router } = require('express');
 
-const schema = require('../graphql/schema');
+const schema = require('./schema');
 
 const router = Router();
 
